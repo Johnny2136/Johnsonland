@@ -1,0 +1,467 @@
+
+<!doctype html>
+<html lang="us" ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>TMA Time Entry Page</title>
+        <link href="bootstrap-3.1.1-dist/css/slider.css" rel="stylesheet">
+	<link href="bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.css" rel="stylesheet">
+     
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>        
+        <script src="Script/jquery-2.1.1.js"></script>
+               
+	<script src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+        <script src="bootstrap-3.1.1-dist/js/bootstrap-slider.js"></script>
+        <script src="Script/app.js"></script>
+	
+ 
+
+</head>
+<body>
+<!-- Header Section -->
+ <h1><img src="images/logoDOS_CA.jpg" alt="Smiley face" width="75" height="75">Time Managment Application</h1>
+  <div class="TMAHome">
+    <nav id="navbar-TMA" class="navbar navbar-default navbar-static" role="navigation">
+      <div class="container-fluid">        
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>          
+          <a class="navbar-brand" href="Home.HTM"><i class="icon-home icon-white"></i>Home</a>
+          <a class="navbar-brand" href="TimeEntry.HTM">Time Entry</a>
+          <a class="navbar-brand" href="UserProfile.HTM">User Profile</a>
+          <a class="navbar-brand" href="Reporting.HTM">Reporting</a>
+          <a class="navbar-brand" href="Admin.HTM">Administrator</a>
+        </div>
+          <ul class="nav navbar-nav navbar-right">              
+            <a class="navbar-brand" href="SignIn.HTM">Log off</a>
+          </ul>
+        </div><!-- /.nav-close -->
+      </div><!-- /.container-fluid -->
+    </nav> <!-- /navbar-TMA -->
+  </div> <!-- /TMAHome -->
+
+<div class="row">
+  <div class="col-md-6">
+
+    <input type="text" id="foo" class="span2" align="right" value="" 
+       data-slider-min="0" data-slider-max="24" data-slider-step="1" 
+       data-slider-value="0" data-slider-orientation="horizontal" 
+       data-slider-selection="after"data-slider-tooltip="hide">
+    <input type="text" id="bar">
+ <script type="text/javascript">
+    $('#foo').slider().on('slide', function(ev) { $('#bar').val(ev.value); });
+    </script>
+
+  </div>
+</div>
+
+
+<div class='row' ng-controller="tmaInputController">
+
+  <div class="col-md-6"><h1>User Data Entry</h1>
+ <h3><div class="container">    
+          <label for="txDate">Enter the date of the activities.</label><p/>
+          <input type="date" name="bday">
+        <button type="button" class="btn btn-primary"onClick="history.go(0)"type="Clear">Reset Form Data</button>
+        <button type="button" class="btn btn-primary"type="submit">Submit Data</button>
+                   
+        </div></h3>
+
+<div id="tabs">
+  <ul id="myTab" class="nav nav-tabs">
+    
+  <li class="active"><a href="#tabs-1" data-toggle="tab">NIV</a></li>
+  <li><a href="#tabs-2" data-toggle="tab">IV</a></li>
+  <li><a href="#tabs-3" data-toggle="tab">PPT</a></li>
+  <li><a href="#tabs-4" data-toggle="tab">SCS</a></li>
+  <li><a href="#tabs-5" data-toggle="tab">OUTREACH/MGMT</a></li>
+  <li><a href="#tabs-6" data-toggle="tab">TRNG/OTHER</a></li>     
+     
+  </ul>  
+  
+  <div id="myTabContent" class="tab-content">
+   <div class="tab-pane fade in active" id="tabs-1">
+     <h3>Hours worked for each NIV activity to be entered daily in increments of 15 min.(1/4 Hour or .25)</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>     
+
+         <div class="form-TMA">
+          <label for="NIV Processing">Hours Spent NIV Processing?</label>
+          <input type="number" class="form-control" ng-model="NIVProc" name="NIVProc" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+          <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>        
+
+         <div class="form-TMA">
+          <label for="NIV Management">Hours Spent NIV Management?</label>
+          <input type="number" class="form-control" ng-model="NIVMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Comments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV/GSS Mgmt">Hours Spent NIV/GSS Management?</label>
+          <input type="number" class="form-control" ng-model="NIVGSSMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Comments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Fraud Prevention">Hours Spent NIV Fraud Prevention?</label>
+          <input type="number" class="form-control" ng-model="NIVFraPrev" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Comments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Public Inquiries">Hours Spent NIV Public Inquiries?</label>
+          <input type="number" class="form-control" ng-model="NIVPubInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Congressional Inquiries">Hours Spent NIV Congressional Inquiries?</label>
+          <input type="number" class="form-control" ng-model="NIVCongInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Clerical">Hours Spent NIV Clerical?</label>
+          <input type="number" class="form-control" ng-model="NIVCler" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Processing">Hours Spent NIV Cashier?</label>
+          <input type="number" class="form-control" ng-model="NIVCash" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="NIV Processing">Hours Spent NIV Representation?</label>
+          <input type="number" class="form-control" ng-model="NIVRep" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+  </div>
+
+
+   <div class="tab-pane fade " id="tabs-2">
+          <h3>Hours worked for each IV activity to be entered daily in increments of 15 min.</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>
+
+
+        <div class="form-TMA">
+          <label for="IV Processing">Hours Spent IV Processing?</label>
+          <input type="number" class="form-control" ng-model="IVProc" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Management">Hours Spent IV Management?</label>
+          <input type="number" class="form-control" ng-model="IVMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV/GSS Mgmt">Hours Spent IV/GSS Management?</label>
+          <input type="number" class="form-control" ng-model="IVGSSMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Fraud Prevention">Hours Spent IV Fraud Prevention?</label>
+          <input type="number" class="form-control" ng-model="IVFraPrev" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Public Inquiries">Hours Spent IV Public Inquiries?</label>
+          <input type="number" class="form-control" ng-model="IVPubInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Congressional Inquiries">Hours Spent IV Congressional Inquiries?</label>
+          <input type="number" class="form-control" ng-model="IVCongInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Clerical">Hours Spent IV Clerical?</label>
+          <input type="number" class="form-control" ng-model="IVCler" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Processing">Hours Spent IV Cashier?</label>
+          <input type="number" class="form-control" ng-model="IVCash" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="IV Processing">Hours Spent IV Representation?</label>
+          <input type="number" class="form-control" ng-model="IVRep" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+     </div>
+   
+
+
+    <div class="tab-pane fade " id="tabs-3">     
+     <h3>Hours worked for each PPT activity to be entered daily in increments of 15 min.</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>
+
+        <div class="form-TMA">
+          <label for="PPT Processing">Hours Spent PPT Processing?</label>
+          <input type="number" class="form-control" ng-model="PPTProc" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Management">Hours Spent PPT Management?</label>
+          <input type="number" class="form-control" ng-model="PPTMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT/GSS Mgmt">Hours Spent PPT/GSS Management?</label>
+          <input type="number" class="form-control" ng-model="PPTGSSMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Fraud Prevention">Hours Spent PPT Fraud Prevention?</label>
+          <input type="number" class="form-control" ng-model="PPTFraPrev" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Public Inquiries">Hours Spent PPT Public Inquiries?</label>
+          <input type="number" class="form-control" ng-model="PPTPubInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Congressional Inquiries">Hours Spent PPT Congressional Inquiries?</label>
+          <input type="number" class="form-control" ng-model="PPTCongInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Clerical">Hours Spent PPT Clerical?</label>
+          <input type="number" class="form-control" ng-model="PPTCler" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Processing">Hours Spent PPT Cashier?</label>
+          <input type="number" class="form-control" ng-model="PPTCash" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="PPT Processing">Hours Spent PPT Representation?</label>
+          <input type="number" class="form-control" ng-model="PPTRep" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+     </div>
+
+     
+     <div class="tab-pane fade " id="tabs-4">     
+     <h3>Hours worked for each SCS activity to be entered daily in increments of 15 min.</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>
+
+        <div class="form-TMA">
+          <label for="SCS Processing">Hours Spent SCS Processing?</label>
+          <input type="number" class="form-control" ng-model="SCSProc" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Management">Hours Spent SCS Management?</label>
+          <input type="number" class="form-control" ng-model="SCSMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS/GSS Mgmt">Hours Spent SCS/GSS Management?</label>
+          <input type="number" class="form-control" ng-model="SCSGSSMgmt" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Fraud Prevention">Hours Spent SCS Fraud Prevention?</label>
+          <input type="number" class="form-control" ng-model="SCSFraPrev" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Public Inquiries">Hours Spent SCS Public Inquiries?</label>
+          <input type="number" class="form-control" ng-model="SCSPubInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Congressional Inquiries">Hours Spent SCS Congressional Inquiries?</label>
+          <input type="number" class="form-control" ng-model="SCSCongInq" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Clerical">Hours Spent SCS Clerical?</label>
+          <input type="number" class="form-control" ng-model="SCSCler" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Processing">Hours Spent SCS Cashier?</label>
+          <input type="number" class="form-control" ng-model="SCSCash" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SCS Processing">Hours Spent SCS Representation?</label>
+          <input type="number" class="form-control" ng-model="SCSRep" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+     </div> 
+             
+   
+   <div class="tab-pane fade " id="tabs-5">
+     <h3>Hours worked for each OUTREACH and Managment activity to be entered daily in increments of 15 min.</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>
+
+
+        <div class="form-TMA">
+          <label for="OUTR Customer Outreach">Hours Spent OUTR Customer Outreach?</label>
+          <input type="number" class="form-control" ng-model="OUTRCustOutr" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="OUTR Social Media Updates">Hours Spent OUTR Social Media Updates?</label>
+          <input type="number" class="form-control" ng-model="OUTRSocMedUpd" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="OUTR Other Media Outreach">Hours Spent OUTR Other Media Outreach?</label>
+          <input type="number" class="form-control" ng-model="OUTROthMedOutr" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+  
+        <div class="form-TMA">
+          <label for="MGMT Supervisory Tasks">Hours Spent MGMT Supervisory Tasks?</label>
+          <input type="number" class="form-control" ng-model="MGMTSupeTask" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="MGMT Country Team">Hours Spent MGMT Country Team?</label>
+          <input type="number" class="form-control" ng-model="MGMTCouTeam" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="MGMT EAC">Hours Spent MGMT EAC?</label>
+          <input type="number" class="form-control" ng-model="MGMTEAC" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="MGMT ICASS">Hours Spent MGMT ICASS?</label>
+          <input type="number" class="form-control" ng-model="MGMTICASS" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="MGMT Representational">Hours Spent MGMT Representational?</label>
+          <input type="number" class="form-control" ng-model="MGMTRep" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+   </div>
+
+   <div class="tab-pane fade " id="tabs-6">
+    <h3>Hours worked for each TRAINING or OTHER activity to be entered daily in increments of 15 min.</h3>
+     <p>(For example 1 hour 15 min would be entered as 1.25 hours.)</p>
+
+
+        <div class="form-TMA">
+          <label for="TRNG Training Received">Hours Spent TRNG Training Received?</label>
+          <input type="number" class="form-control" ng-model="TRNGTrainRec" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="TRNG Training Conducted">Hours Spent TRNG Training Conducted?</label>
+          <input type="number" class="form-control" ng-model="TRNGTrainCon" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="OTH Detail(Non-CA)">Hours Spent OTHER (NON-CA) activities?</label>
+          <input type="number" class="form-control" ng-model="OTHNonCA" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="OTH Leave">Hours Spent OTH Leave?</label>
+          <input type="number" class="form-control" ng-model="OTHLeave" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+        <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+        <div class="form-TMA">
+          <label for="SOGA Processing">Hours Spent Other Government Agency Processing?</label>
+          <input type="number" class="form-control" ng-model="SOGAProc" placeholder="0" min="0" max="24">
+          <span class="help-block"></span>
+       <input type="text" class="form-control" id="Coments" placeholder="Optional Coments"></div>
+
+
+
+ </div>   
+
+</div>
+          
+</div>
+
+</div>
+<div class="col-md-6">
+
+<h1>Preview of User Data: </h1>
+
+  Total Hours On this Entry = <input type="text" readonly value={{sumOfAll()}} /> Hours<p/>
+<p/>
+
+  Total NIV Hours = 
+<input type="text" readonly value={{NIVTotal()}} /> Hours
+
+<p/>
+
+  Total IV Hours = <input type="text" readonly value={{IVTotal()}} /> Hours
+<p/>
+
+  Total PPT Hours = <input type="text" readonly value={{PPTTotal()}} /> Hours
+
+<p/>
+
+  Total SCS Hours = <input type="text" readonly value={{SCSTotal()}} /> Hours
+
+<p/>
+
+  Total Outreach Hours = <input type="text" readonly value={{OUTTotal()}} /> Hours
+<p/>
+
+  Total Managment Hours = <input type="text" readonly value={{MGMTTotal()}} /> Hours
+<p/>
+
+  Total Training =  <input type="text" readonly value={{TRNGTotal()}} /> Hours
+</p>
+
+Other Hours, Non CA, Other Agency Support and Leave Time = <input type="text" readonly value={{OTHTotal()}} /> Hours
+<p/>
+
+</div>  
+          
+</div>
+</body>
+</html>

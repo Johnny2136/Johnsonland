@@ -1,0 +1,41 @@
+body,td,th {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 12px;
+				color:#FFFF00
+			}
+			body {
+				background-color: #000099;
+			}
+			fieldset {
+  
+				
+			}
+			label {
+				 float:left;
+				 width:35%; 
+				 text-align:right;
+				 font-weight:bold;
+				 font-size: 14px;
+				 color:#FFFF00
+			 }
+			 legend {
+				font-size: 20px;
+				color:#FF0099;
+			}
+			
+			a:link 
+				{
+					color:white
+					} 
+			a:visited 
+				{
+					color:yellow
+					} 
+			a:hover 
+				{
+					color:red 
+					}
+			a:active 
+				{ 
+					color:blue
+					}   

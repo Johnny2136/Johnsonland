@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="us" ng-app="entryApp">
+<head>
+	<meta charset="utf-8">
+	<title>TMA User Profile Page</title>
+        <script src="Script/jquery-2.1.1.js"></script>
+
+        <link href="bootstrap-3.1.1-dist/css/slider.css" rel="stylesheet">
+	<link href="bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap-3.1.1-dist/css/bootstrap-theme.css" rel="stylesheet">
+     	<script src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+        <script src="bootstrap-3.1.1-dist/js/bootstrap-slider.js"></script>
+
+
+	
+
+</head>
+<body data-ng-controller="entryCtrl" style="padding:9px;">
+<!-- Header Section -->
+<p>Test Data being stringafied and sent to MongoDB Should appear below:</p>
+{{profile.firstName}}
+{{profile.middleName}}
+{{profile.lastName}}
+{{profile.userEmail}}
+{{profile.supFirstName}}
+{{profile.supMiddleName}}
+{{profile.supLastName}}
+{{profile.supEmail}}
+{{profile.altSupFirstName}}
+{{profile.altSupMiddleName}}
+{{profile.altSupLastName}}
+{{profile.altSupEmail}}
+{{profile.posTyp}}
+{{profile.posGrd}}
+{{profile.posNum}}
+{{profile.bureau}}
+{{profile.country}}
+{{profile.post}}
+ <h1><img src="images/logoDOS_CA.jpg" alt="Smiley face" width="75" height="75">Time Managment Application</h1>
+  <div class="TMAHome">
+    <nav id="navbar-TMA" class="navbar navbar-default navbar-static" role="navigation">
+      <div class="container-fluid">        
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>          
+          <a class="navbar-brand" href="Home.HTM"><i class="icon-home icon-white"></i>Home</a>
+          <a class="navbar-brand" href="TimeEntry.HTM">Time Entry</a>
+          <a class="navbar-brand" href="UserProfile.HTM">User Profile</a>
+          <a class="navbar-brand" href="Reporting.HTM">Reporting</a>
+          <a class="navbar-brand" href="Admin.HTM">Administrator</a>
+        </div>
+          <ul class="nav navbar-nav navbar-right">              
+            <a class="navbar-brand" href="SignIn.HTM">Log off</a>
+          </ul>
+        </div><!-- /.nav-close -->
+      </div><!-- /.container-fluid -->
+    </nav> <!-- /navbar-TMA -->
+  </div> <!-- /TMAHome -->
+
+
+<form class="form-USR">
+        <h1>User Profile</h1>
+
+  <div><FORM-USR>
+
+        <h3>Profile Information: Enter or update User information:</h3>
+
+        <div class="form-USR">
+          <label for="uName">Enter your name?</label>
+          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"  autofocus autocomplete="on">
+          <input ng-model="profile.middleName" class="form-control" id="middleName" placeholder="Middle Name"   autocomplete="on">
+          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"   autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+       <div class="form-USR">
+          <label for="userEmail">Enter your email address?</label>
+          <input ng-model="profile.userEmail" type="email"class="form-control" id="userEmail" placeholder="Email address" >
+          <span class="help-block"></span>
+        </div>
+</div>
+
+<div class="col-md-6"> 
+        <div class="form-USR">
+          <label for="sName">Enter your Supervisor's name?</label>          
+          <input ng-model="profile.supFirstName" class="form-control" id="supFirstName" placeholder="First Name"   autocomplete="on">
+          <input ng-model="profile.supMiddleName" class="form-control" id="supMiddleName" placeholder="Middle Name"   autocomplete="on">
+          <input ng-model="profile.supLastName" class="form-control" id="supLastName" placeholder="Last Name"   autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="supervisorEmail">Enter your Supervisor's email address?</label>
+          <input ng-model="profile.supEmail" type="email"class="form-control" id="supEmail" placeholder="Email address" >
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="aSName">Enter your Alternate Supervisor's name?</label>          
+          <input ng-model="profile.altSupFirstName" class="form-control" id="altSupFirstName" placeholder="First Name"   autocomplete="on">
+          <input ng-model="profile.altSupMiddleName" class="form-control" id="altSupMiddleName" placeholder="Middle Name"   autocomplete="on">
+          <input ng-model="profile.altSupLastName" class="form-control" id="altSupLastName" placeholder="Last Name"   autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="altSupervisorEmail">Enter your Alternate Supervisor's email address?</label>
+          <input ng-model="profile.altSupEmail" type="email"class="form-control" id="altSupEmail" placeholder="Email address" >
+          <span class="help-block"></span>
+        </div>
+</div>
+<div class="col-md-6">    
+    <div class="form-USR">
+          <label for="post">Enter your Position Type?</label>          
+          <input ng-model="profile.posTyp" class="form-control" id="posTyp" placeholder="Position Type" autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="post">Enter your Position Grade?</label>          
+          <input ng-model="profile.posGrd" class="form-control" id="posGrd" placeholder="Position Grade" autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="post">Enter your Position Number?</label>          
+          <input ng-model="profile.posNum" class="form-control" id="posNum" placeholder="Position Number" autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR">
+          <label for="post">Enter your Bureau?</label>          
+          <input ng-model="profile.bureau" class="form-control" id="bureau" placeholder="Pick from bureau query" autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+
+        <div class="form-USR"> 
+          <label for="post">Enter the country name?</label>
+          <input ng-model="profile.country" class="form-control" id="country" placeholder="Pick from country in bureau query" autocomplete="on">          
+          <span class="help-block"></span>
+        </div>
+
+        <div class="form-USR"> 
+          <label for="post">Enter the post name?</label>
+          <input ng-model="profile.post" class="form-control" id="post" placeholder="Pick from posts in country query" autocomplete="on">
+          <span class="help-block"></span> 
+        </div> 
+      
+     </div>
+   </div>      
+</div>
+
+<div class="form-USR">
+      
+        <button class="btn btn-sm btn-primary" ng-click="postData();" >Submit Data </button>
+        <button class="btn btn-sm btn-primary"onClick="history.go(0)"type="Clear">Reset Form Data</button>
+
+      </form>
+</div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>        
+        <script src="Script/entryApp.js"></script>
+
+
+</body>
+</html>

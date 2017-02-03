@@ -1,0 +1,51 @@
+body
+	{
+		font-family: Comic Sans,Arial,Courier New ;  
+		background-image:url('image/bluesky.jpg')
+		}
+h1 
+	{
+		color:#8A2BE2; 
+		font-size:24pt
+		}
+h2 
+	{
+		color:#0000CC;
+		font-size:16pt
+		}
+h3
+	{
+		color:#9900CC; 
+		font-size:16pt
+		}
+h4 
+	{
+		color:#9900CC;
+		font-size:18pt
+		}
+hr 
+	{
+		width:100%;
+		color:#CC0099
+		} 
+p 
+	{
+		font-size:12pt;
+		margin-left:15px
+		} 
+a:link 
+	{
+		color:navy
+		} 
+a:visited 
+	{
+		color:purple
+		} 
+a:hover 
+	{
+		color:red 
+		}
+a:active 
+	{ 
+		color:blue
+		}   

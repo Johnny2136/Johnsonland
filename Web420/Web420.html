@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="EditPlus" />
+<meta name="Author" content="Johnny Johnson" />
+<meta name="Keywords" content="Mortgage Calculator" />
+<meta name="Description" content="Fill able Form WEB PROGRAMMING 420" />
+<!-- 12 October 2005 -->
+<title>Individual Assignment Week Four:</title>
+<link rel="stylesheet" type="text/css" href="Week2.css">
+<!-- Week 2 style sheet. -->
+
+<script type="text/javascript">
+
+<!--
+        function expired( month, year ) {
+        	var now = new Date();							// this function is designed to check for expired cards.
+        	var expiresIn = new Date(year,month,0,0,0);		// create an expired on date object with valid thru expiration date
+        	expiresIn.setMonth(expiresIn.getMonth());		// adjust the month, to first day, hour, minute & second of expired month
+        	if( now.getTime() < expiresIn.getTime() ) return false;
+        	return true;									
+            }
+
+      function validateCard(cardMonth,cardYear) {
+           if( expired( cardMonth, cardYear ) ) {							// check if entered date is already expired.
+           alert("Sorry! The expiration date you have entered would make this card invalid.");
+           return false;
+           }                                                	
+           return true;                                      // at this point card has not been proven to be expired.
+        }
+		   //-->
+</script>
+
+</head>
+
+<body>
+
+<table width="900" height="500" border="0">
+  <tr>
+ <!--Title Heading -->
+    <th bgcolor="#003366" scope="col" width="117" height="46">
+			<img src="image/uopbird.gif" alt="UoP Logo" width="117" height="46" /></th>
+    <th scope="col"><h1 align="left"> &nbsp;  &nbsp; WEB PROGRAMMING 420</h1></th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+ 
+  <tr>
+    <th align="left" valign="top" bordercolor="#00FF00" bgcolor="#003366" scope="col">
+  <!-- Navigation Menu -->  
+        <h2>Links:</h2><br />
+<a href="http://johnsonland.org"><b>Johnsonland</b></a><br />
+<br />
+<a href="mort_cal.html"><b>Mortgage<br />
+Calculator</b></a><!-- Next Task Due Later -->
+     <br /><br />
+<a href="media.html"><b>Media page<br />
+</a><!-- Next Task Due Later -->
+      </div>
+</th>
+ <!--Explanation of Page H2 style -->
+    <th scope="col" valign="top"><h2 align="center" >This is a sample order form with credit card expiration date validation
+	<br />
+	that is required for week three of WEB420: </h2>
+
+ <fieldset><legend>Form Information</legend><!-- Puts a label to the form field -->
+      
+    <form action="MAILTO:johnny@johnsonland.org" method="post"
+  enctype="text/plain"  onsubmit="return validateCard(this.cardMonth.value,this.cardYear.value);">
+   
+    <!-- Name field -->
+      <div align="left"><br />        
+        <label for="first_name">First Name:</label>
+        <input  type="text" name="first_name" size="10" maxlength="100" value="First Name" />
+      </div>
+
+      <div align="left">        
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" size="10" maxlength="100" value="Last Name" />
+      </div>
+<!-- Address 1&2 field -->
+      <div align="left">       
+        <label for="address_1">Address 1:</label>
+        <input type="text" name="address_1"size="30" maxlength="100" value="Address line #1" />
+		<div align="left">       
+        <label for="address_2">Address 2:</label>
+       <input type="text" name="address_2"size="30" maxlength="100" value="Address line #2" />
+      </div>
+<!-- City field -->
+     <div align="left">        
+        <label for="city">City:</label>
+        <input type="text" name="city"  size="10" maxlength="100" value="City Name" />
+      </div>
+<!-- State pick list field Adding the AA, AP, AE. -->
+      <div align="left">        
+        <label for="state">State:</label>        
+				<select name="state" id="state" class="selectOne">
+				<option value="">Select a State/Province</option>
+				<option value="">------------------------</option>
+				<option value="AL">AL - Alabama</option>
+				<option value="AK">AK - Alaska</option>
+				<option value="AZ">AZ - Arizona</option>
+				<option value="AR">AR - Arkansas</option>
+				<option value="CA">CA - California</option>
+				<option value="CO">CO - Colorado</option>
+				<option value="CT">CT - Connecticut</option>
+				<option value="DE">DE - Delaware</option>
+				<option value="DC">DC - District of Columbia</option>
+				<option value="FL">FL - Florida</option>
+				<option value="GA">GA - Georgia</option>				
+				<option value="HI">HI - Hawaii</option>
+				<option value="ID">ID - Idaho</option>
+				<option value="IL">IL - Illinois</option>
+				<option value="IN">IN - Indiana</option>
+				<option value="IA">IA - Iowa</option>
+				<option value="KS">KS - Kansas</option>
+				<option value="KY">KY - Kentucky</option>
+				<option value="LA">LA - Louisiana</option>
+				<option value="ME">ME - Maine</option>
+				<option value="MD">MD - Maryland</option>
+				<option value="MA">MA - Massachusetts</option>
+				<option value="MI">MI - Michigan</option>
+				<option value="MN">MN - Minnesota</option>
+				<option value="MS">MS - Mississippi</option>
+				<option value="MO">MO - Missouri</option>
+				<option value="MT">MT - Montana</option>
+				<option value="NE">NE - Nebraska</option>
+				<option value="NV">NV - Nevada</option>
+				<option value="NH">NH - New Hampshire</option>
+				<option value="NJ">NJ - New Jersey</option>
+				<option value="NM">NM - New Mexico</option>
+				<option value="NY">NY - New York</option>
+				<option value="NC">NC - North Carolina</option>
+				<option value="ND">ND - North Dakota</option>
+				<option value="OH">OH - Ohio</option>
+				<option value="OK">OK - Oklahoma</option>
+				<option value="OR">OR - Oregon</option>
+				<option value="PA">PA - Pennsylvania</option>
+				<option value="RI">RI - Rhode Island</option>
+				<option value="SC">SC - South Carolina</option>
+				<option value="SD">SD - South Dakota</option>
+				<option value="TN">TN - Tennessee</option>
+				<option value="TX">TX - Texas</option>
+				<option value="UT">UT - Utah</option>
+				<option value="VT">VT - Vermont</option>
+				<option value="VA">VA - Virginia</option>
+				<option value="WA">WA - Washington</option>
+				<option value="WV">WV - West Virginia</option>
+				<option value="WI">WI - Wisconsin</option>
+				<option value="WY">WY - Wyoming</option>
+				<option value="">------------------------</option>
+				<option value="AA">AA - Armed Forces Americas</option>
+				<option value="AE">AE - Armed Forces Europe</option>
+				<option value="AP">AP - Armed Forces Pacific</option>
+				<option value="">------------------------</option>
+				<option value="XX">XX - Other </option></select>
+      </div>
+<!--Zip code field  -->
+     <div align="left">         
+        <label for="postal">Zip/Postal Code:</label>
+        <input type="num" name="postal" size="5" maxlength="5" value="5 Digit" />
+      </div>
+<!--Phone # field  -->
+      <div align="left">  
+        <label for="phone"> Phone number&nbsp; {Area code}:</label>
+                      <input type="num" name="phone_a" size="3" value="999" />  </div>
+                      <label for="phone"> &nbsp; {Phone}:</label>
+					  <input type="num" name="phone_b" size="3" value="999" />
+					-
+					  <input type="num" name="phone_c" size="4" value="9999" />
+                      <div align="left">
+<!--Birthday field  -->
+<label for="bday"> Birth date:</label>
+<select name="b_month">
+					<option selected="selected" value="01">JAN					</option>
+					<option value="02">FEB					</option>
+					<option value="03">MAR					</option>
+					<option value="04">APR					</option>
+					<option value="05">MAY					</option>
+					<option value="06">JUN					</option>
+					<option value="07">JUL					</option>
+					<option value="08">AUG					</option>
+					<option value="09">SEP					</option>
+					<option value="10">OCT					</option>
+					<option value="11">NOV					</option>
+					<option value="12">DEC		</option>
+</select>
+&nbsp;/&nbsp;
+					 <select name="b_day">
+					<option selected="selected" value="01">01					</option>
+					<option value="02">02					</option>
+					<option value="03">03					</option>
+					<option value="04">04					</option>
+					<option value="05">05					</option>
+					<option value="06">06					</option>
+					<option value="07">07					</option>
+					<option value="08">08					</option>
+					<option value="09">09					</option>
+					<option value="10">10					</option>
+					<option value="11">11					</option>
+					<option value="12">12					</option>
+					<option value="13">13					</option>
+					<option value="14">14					</option>
+					<option value="15">15					</option>
+					<option value="16">16					</option>
+					<option value="17">17					</option>
+					<option value="18">18					</option>
+					<option value="19">19					</option>
+					<option value="20">20					</option>
+					<option value="21">21					</option>
+					<option value="22">22					</option>
+					<option value="23">23					</option>
+					<option value="24">24					</option>
+					<option value="25">25					</option>
+					<option value="26">26					</option>
+					<option value="27">27					</option>
+					<option value="28">28					</option>
+					<option value="29">29					</option>
+					<option value="30">30					</option>
+					<option value="31">31					</option>
+					 </select>
+						&nbsp;/&nbsp;
+					  <input type="num" name="b_year" size="4" value="1900" />
+<!--Credit Card field  -->
+          <div align="left">
+			<label for="cardType">Credit card :</label>
+                     <input type="radio" name="cardType" value="d"checked="checked" />
+                     (Discover Card)
+					 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="cardType" value="m" />
+                      (Master Card)
+					  <div align="left"> 
+					 <label for="credit">&nbsp;</label> 
+					 <input type="radio" name="cardType" value="a" />
+					 (American Express)&nbsp;                    
+					<input type="radio" name="cardType" value="v" />
+					(Visa)
+        </div>
+
+		<div align="left">  
+					<label for="cardNumber"> Card Number:</label>
+					  <input type="num" name="cardNumber" size="17" maxlength="16" value="000000000000000" />
+		</div>
+		<div align="left">  
+					<label for="Credit_date">Expiration date (Month / Year):</label>				 
+					
+					<select name="cardMonth">
+					<option selected="selected" value="01">JAN	</option>				
+					<option value="02">FEB			</option>		
+					<option value="03">MAR		</option>			
+					<option value="04">APR			</option>		
+					<option value="05">MAY		</option>			
+					<option value="06">JUN			</option>		
+					<option value="07">JUL			</option>		
+					<option value="08">AUG			</option>		
+					<option value="09">SEP			</option>		
+					<option value="10">OCT			</option>		
+					<option value="11">NOV			</option>		
+					<option value="12">DEC			</option>		
+					</select>
+
+					&nbsp;/&nbsp;
+					<select name="cardYear">
+					<option value="2000" selected>2000</option>
+					<option value="2001">2001			</option>
+					<option value="2002">2002			</option>
+					<option value="2003">2003			</option>	
+					<option value="2004">2004			</option>
+					<option value="2005">2005			</option>
+					<option value="2006">2006			</option>
+					<option value="2007">2007			</option>
+					<option value="2008">2008			</option>
+					<option value="2009">2009			</option>
+					<option value="2010">2010			</option>
+					<option value="2011">2011			</option>
+					<option value="2012">2012			</option>
+					<option value="2013">2013			</option>
+					<option value="2014">2014			</option>
+						</select><br>
+		</div><br />
+
+		<div align="center">   
+				<input type="reset" value="Clear the form!" />
+				<input type="Submit" name="submit" value="Submit"/>
+                <br />
+
+	  </fieldset>
+</form></th>
+    
+  </tr>
+</table>
+<p><th scope="col"><EMBED SRC="image/FireflyTheme.mp3" />
+<br/>This is the theme music 
+<br/> Written by Joss Whedon
+<br/> Performed by Sonny Rhodes
+<br/> for his hit series "Firefly"
+<br/>MP3 obtained from<br/><a href="http://www.fireflywiki.org/Firefly/FireflyThemeSong"><b>Fierfly Theme </b></a></th> </p>
+</body>
+</html>

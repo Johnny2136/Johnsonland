@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Mission (Page1)</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="Johnny Johnson">
+  <meta name="Keywords" content="Week Two Individual Assignment">
+  <meta name="Description" content="Mission Statement">
+<link rel="stylesheet" type="text/css" href="Week4.css" >
+</head>
+
+<body >
+ <center>
+  <hr width="100%" size="10" color="black">
+
+<!-- Week 4 navigation table as outlined in the requiernents
+		common throughout the website-->
+
+<table width="100%" border="0">
+    <tr> 
+	  <td><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://johnsonland.org"><b>
+	  Johnsonland</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center></td>
+      <td><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="web410.html"><b>
+	  Home</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center></td>
+      <td><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mission.html"> <b>
+	  Mission</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center></td>
+      <td><center>&nbsp;&nbsp;&nbsp;&nbsp;<a href="airframes.html"> <b>
+	  Airframes</b></a>&nbsp;&nbsp;&nbsp;&nbsp;</center></td>
+      <td><center>&nbsp;&nbsp;&nbsp;<a href="capabilities.html"> <b>
+	  Capabilities</B></a>&nbsp;&nbsp;</center></td>
+      <td><center><a href="contact.html"> <b>Contact Information</b></a></center></td>
+    </tr>
+  </table>
+
+  <hr width="100%" size="10" color="black">
+
+     <h1>SCP Mission Statement:<br></h1>
+ 
+
+  <h2>The Support Center Pacific manages an Air Force Material Command
+  <a href= "http://www.afmc.wpafb.af.mil/"
+  title= "Go to the AFMC home page"> (AFMC)</a>
+  depot-level maintenance organization at Kadena AB,
+  Japan, which provides depot-level logistics support, maintenance,
+  test, repair, overhaul, modification, and asset distribution to
+  support all major Fighter Wings in the Pacific Theater 
+ <a href= "http://www.globalsecurity.org/military/agency/usaf/pacaf.htm/" 
+  title= "Learn about PACAF"> (PACAF)</a>.</h2><br>
+  <img src="image/F-16_ANG_Texas.jpg" alt="F-16 Texas ANG squadron">
+  <hr width="100%" size="10" color="black"></center>
+
+<!-- Week 4 Java script displays date at bottom of page.
+Also the CSS validation I ran on the website prior to 
+turning in the assignment-->
+<table width="100%" border="0">
+  <tr>
+  		<td><script type="text/javascript">
+					var data=new Date() //Date function returns system Date.
+					var week=new Array("<b>Sunday","<b>Monday","<b>Tuesday",
+						"<b>Wednesday","<b>Thursday","<b>Friday","<b>Saturday") 
+						/*Names of the days of the week, Unable to complete <b> bold tags 
+						because I wanted the effect to blend over into the digits*/
+					var month=new Array("<b>January","<b>February","<b>March",
+						"<b>April","<b>May","<b>June","<b>July","<b>August",
+						"<b>September",	"<b>October","<b>November","<b>December")
+						//Names of the 12 months
+					document.write (week[data.getDay()] + "  ")//Writes from the array 'week' day of week.
+					document.write(data.getDate() + " ")//Writes the numerical date
+					document.write(month[data.getMonth()] + " ")//Writes from the array 'month' .
+					document.write(data.getFullYear())//The getFullYear yeilds the four digit year.
+
+					/*I found a similar program on the web and modeled my program after it. I used a 
+					different array structure than the original.The Title: Daily Greeting, 
+					Author: Peter Ghiringhelli (pg_webmaster@yahoo.com),
+					Contributor URL: http://www.peter.ghiringhelli.btinternet.co.uk/.  
+					The Original program was found at URL: http://javascript.internet.com/calendars/ */
+					</script></td>	
+
+		 <td><center><a href="http://jigsaw.w3.org/css-validator/">
+					<img style="border:0;width:88px;height:31px"
+					src="http://jigsaw.w3.org/css-validator/images/vcss" 
+					 alt="Valid CSS!"></a></center></td>
+
+	</tr>
+  </table>  
+
+</body>
+</html>

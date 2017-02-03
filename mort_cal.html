@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="Johnny Johnson">
+<meta name="Keywords" content="Mortgage Calculator">
+<meta name="Description" content="Mortgage Calculator WEB PROGRAMMING 420">
+<!-- 12 October 2005 -->
+<title>Mortgage Calculator</title>
+
+<link rel="stylesheet" type="text/css" href="Week2.css" ><!-- Week 2 style sheet. -->
+</head>
+
+<body>
+
+<table width="900" marginheight="500" border="0">
+  <tr>
+ <!--Title Heading -->
+    <th bgcolor="#003366" scope="col" width="117" height="46">
+			<img src="image/uopbird.gif" alt="UoP Logo" width="117" height="46" /></th>
+    <th scope="col"><h1 align="left"> &nbsp;  &nbsp; WEB PROGRAMMING 420</h1></th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+ 
+  <tr>
+    <th align="left" valign="top" bordercolor="#00FF00" bgcolor="#003366" scope="col" marginheight="500">
+  <!-- Navigation Menu -->  
+        <h2>Links:</h2><br />
+<a href="index.html"><b>Home</b></a><br />
+<br />
+ <a href="mort_cal.html"><b>Mortgage<br />
+Calculator</b></a><!-- Next Task Due Later -->
+       <br /><br />
+<a href="media.html"><b>Media page<br />
+</a><!-- Next Task Due Later -->
+      </div>
+</th>
+ <!--Explanation of Page H2 style -->
+    <th scope="col" valign="top"><h2 align="center" ></h2>
+     <applet code="CreditRoll.class" width="600" height="180">
+		<param name=BGCOLOR value="000099">
+		<param name=TEXTCOLOR value="FFFF00">
+		<param name=FADEZONE value="40">
+		<param name=TEXT1 value="This is the Credit Roll Applet">
+		<param name=TEXT2 value="You can use this freeware on your page to">
+		<param name=TEXT3 value="scroll credits and other text.">
+		<param name=TEXT4 value="Download it now!">
+		<param name="URL" value="http://www.gshome.com/java/creditroll.html">
+		<param name=TEXT5 value="This is a simple mortgage calculator!">
+		<param name=TEXT6 value="This is required for week three of WEB420!">
+		<param name=TEXT7 value="Click the button below to calculate  ">
+		<param name=TEXT8 value="your monthly payment.">
+		<param name=TEXT9 value="Enjoy Week 4 :o)~~~~~">
+		<param name=SPEED value="30">
+		<param name=VSPACE value="20">
+		<param name=FONTSIZE value="28">
+	</applet>
+<br /><br />
+    <fieldset><legend>Mortgage Calculator</legend><!-- Puts a label to the form field -->
+    <!-- Name field -->
+      
+	<form name=form2 action=POST>
+
+      <SCRIPT language=JavaScript><!--
+function M_calc()
+{
+	form = document.form2
+	LoanAmount= form.LoanAmount.value
+		
+	DownPayment= "0"
+	AnnualInterestRate = form.InterestRate.value/100
+	Years= form.NumberOfYears.value
+		MonthRate=AnnualInterestRate/12
+	NumPayments=Years*12
+	Prin=LoanAmount-DownPayment
+	
+	MonthPayment=Math.floor((Prin*MonthRate)/(1-Math.pow((1+MonthRate),(-1*NumPayments)))*100)/100
+		form.NumberOfPayments.value=NumPayments
+	form.MonthlyPayment.value=MonthPayment
+}
+        // --></SCRIPT>
+     
+         <div align="left"><br />        
+        <label for="LoanAmount">Loan Amount $:</label>
+        <input   onblur=M_calc() onchange=M_calc() size=10 value=50000 
+            name=LoanAmount />
+		</div>
+		<div align="left"><br />          
+        <label for="apr">Annual Interest Rate:</label>
+        <input   onblur=M_calc() onchange=M_calc() size=3 value=6.5 
+            name=InterestRate /> %
+		 </div>
+		<div align="left"><br />            
+        <label for="term">Term of Loan:</label>
+        <input  onblur=M_calc() onchange=M_calc() size=3 value=25 
+            name=NumberOfYears /> Years.
+			<div/><br />
+			<table width="75%" border="0" >
+				<tr>
+					<td>&nbsp;&nbsp;</td>
+					<td><div align="center">     
+			<h4>Click the <cite>'Calculate' </cite>&nbsp; button to see the result below:   </div></TD>
+					<td>&nbsp;&nbsp;</TD>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;</td>
+					<td><div align="right"><input language=JavaScript onclick=M_calc() type=button value=Calculate name=jscalc/>
+			 <div/></td>
+					<td>&nbsp;&nbsp;</td>
+				</tr>
+				</table>	
+
+              
+
+<div align="left"><br />          
+				 <label >Number of Payments:</label>
+				 <input name=NumberOfPayments size="5" />
+				<div/><br/>
+			
+			 <label >Monthly Amount $:</label>
+			 <input name=MonthlyPayment size="5"/>
+      </div>
+	  <br/>
+
+ <br/>
+
+</form>
+ </fieldset>
+    <th scope="col">&nbsp;</th>
+  </tr>
+</table>
+<p>&nbsp; </p>
+</body>
+</html>
